@@ -37,9 +37,10 @@ module.exports = {
     plugins: [
         new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
-            title: 'react-news',
-            template: './src/index.html',
-            scriptFilename: 'app.min.js'
+          title: 'react-news',
+          filename: 'index.html',
+          template: 'src/index.html',
+          scriptFilename: 'app.js'
         })
     ]
 };
