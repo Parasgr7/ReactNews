@@ -5,15 +5,20 @@ process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function(config) {
     config.set({
-      browsers: ['MyChromeHeadless'],
+      browsers: ['Chrome','MyChromeHeadless'],
       customLaunchers: {
-      MyChromeHeadless: {
-        base: 'ChromeHeadless',
-        flags: [
-          '--no-sandbox'
-        ]
-      }
-    },
+        MyChromeHeadless: {
+          base: 'ChromeHeadless',
+          flags: [
+            '--headless',
+            '--disable-gpu',
+            '--disable-translate',
+            '--disable-extensions',
+            '--no-sandbox',  // Added to fix an issue where of Failed to connect to chrome browser
+            '--remote-debugging-port=9222',
+          ]
+        }
+      },
         // karma only needs to know about the test bundle
         files: ['./test.bundle.js'],
         singleRun: true,

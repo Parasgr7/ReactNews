@@ -40,4 +40,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm install
-      - run: npm test
+      - run: npm test --browsers MyChromeHeadless
