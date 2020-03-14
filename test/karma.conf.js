@@ -4,7 +4,13 @@ var webpackTestConfig = require('../webpack.tests.config.js');
 
 module.exports = function(config) {
     config.set({
-        browsers: ['Chrome'],
+      browsers: ['ChromeNoSandbox'],
+        customLaunchers: {
+            ChromeNoSandbox: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
         // karma only needs to know about the test bundle
         files: ['./test.bundle.js'],
         singleRun: true,
