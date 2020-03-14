@@ -5,7 +5,15 @@ process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function(config) {
     config.set({
-      browsers: ['ChromeHeadless'],
+      browsers: ['Chrome'],
+      browserDisconnectTimeout: 10000,
+      browserDisconnectTolerance: 3,
+      browserNoActivityTimeout: 60000,
+      flags: [
+        '--disable-web-security',
+        '--disable-gpu',
+        '--no-sandbox'
+      ],
         // karma only needs to know about the test bundle
         files: ['./test.bundle.js'],
         singleRun: true,
