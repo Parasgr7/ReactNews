@@ -5,7 +5,7 @@ process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function(config) {
     config.set({
-      browsers: ['Chrome','MyChromeHeadless'],
+      browsers: ['MyChromeHeadless'],
       customLaunchers: {
         MyChromeHeadless: {
           base: 'ChromeHeadless',
@@ -15,7 +15,8 @@ module.exports = function(config) {
             '--disable-translate',
             '--disable-extensions',
             '--no-sandbox',  // Added to fix an issue where of Failed to connect to chrome browser
-            '--remote-debugging-port=9222',
+            '--proxy-bypass-list=*',
+            '--proxy-server=\'http://localhost:3300\''
           ]
         }
       },
