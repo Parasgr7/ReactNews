@@ -16,7 +16,9 @@ module.exports = function(config) {
             '--disable-extensions',
             '--no-sandbox',
             '--disable-web-security',
-            '--disable-site-isolation-trials'
+            '--disable-site-isolation-trials',
+            "--js-flags=--max-old-space-size=8196", // THIS LINE FIXED IT!!!
+
           ]
         }
       },
