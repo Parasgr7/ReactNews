@@ -14,9 +14,9 @@ module.exports = function(config) {
             '--disable-gpu',
             '--disable-translate',
             '--disable-extensions',
-            '--no-sandbox',  // Added to fix an issue where of Failed to connect to chrome browser
-            '--proxy-bypass-list=*',
-            '--proxy-server=\'http://localhost:3300\''
+            '--no-sandbox',
+            '--disable-web-security',
+            '--disable-site-isolation-trials'
           ]
         }
       },
