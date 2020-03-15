@@ -24,7 +24,7 @@ module.exports = function(config) {
       },
         // karma only needs to know about the test bundle
         files: ['./test.bundle.js'],
-        singleRun: true,
+        // singleRun: true,
         frameworks: [
             'chai',
             'mocha',

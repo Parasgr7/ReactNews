@@ -37,7 +37,6 @@
     "karma-coverage": "^0.5.3",
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
-    "karma-phantomjs-launcher": "^0.2.1",
     "karma-phantomjs-shim": "^1.1.2",
     "karma-sinon": "^1.0.4",
     "karma-sinon-chai": "^1.1.0",
@@ -74,7 +73,8 @@
     "build": "rm -rf build/* && ./node_modules/.bin/webpack",
     "dist": "rm -rf dist/* && ./node_modules/.bin/webpack -p --config webpack.production.config.js",
     "lint": "./node_modules/.bin/eslint src/",
-    "test": "./node_modules/.bin/karma start ./test/karma.conf.js --reporters mocha,coverage",
+    "test": "./node_modules/.bin/karma start ./test/karma.conf.js -single-run --browsers MyChromeHeadless --reporters mocha,coverage",
     "test:watch": "./node_modules/.bin/karma start ./test/karma.conf.js --no-single-run --reporters mocha"
-  }
+  },
+  "dependencies": {}
 }
